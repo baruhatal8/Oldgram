@@ -8,13 +8,20 @@ body {
     padding: 0;
     font-family: 'Noto Sans Display', sans-serif;
     border: 1px solid;
-    
+
+
 }
 
 /* layout */
 .content {
     width: 375px;
     margin: 0 auto;
+}
+
+.user {
+    padding: 10px 0;
+    border-bottom: solid lightgray 1px;
+
 }
 
 /* top */

@@ -29,12 +29,16 @@ const posts = [
   },
 ];
 
+const likes = document.querySelector(".likes");
+const like =  document.querySelector(".like");
+
+
   
   let container = document.querySelector("main");
-  
+  function createPostHTML() {
   let list = ""; // Инициализируем переменную вне цикла
   
-  posts.forEach((item) => {
+  posts.forEach((item,index) => {
     list += `
       <section class="user">
         <section class="title">
@@ -46,15 +50,31 @@ const posts = [
         </section>
         <img src="${item.post}" alt="post" class="post">
         <section class="social">
-          <img src="images/icon-heart.png" alt="like" class="icon like">
+        <img src="images/icon-heart.png" alt="like" class="icon like" id="like-${index}">
           <img src="images/icon-comment.png" alt="comment" class="icon comment">
           <img src="images/icon-dm.png" alt="share" class="icon share">
         </section>
-        <h4 class="likes">${item.likes} Likes</h4>
+        <h4 class="likes" id="likes-${index}">${item.likes} Likes</h4>
         <p class="subs"><span class="username">${item.username}</span> ${item.comment}</p>
       </section>
     `;
+
+   
+   
   });
   
-  container.innerHTML = list; // Добавляем весь HTML в контейнер после формирования списка
-  
+  container.innerHTML = list; // Добавляем весь HTML в контейнер после формирования списка  
+  addLikeEventListeners();
+}
+
+function addLikeEventListeners() {
+  posts.forEach((item, index) => {
+    let likeIcon = document.getElementById(`like-${index}`);
+    likeIcon.addEventListener("click", () => {
+      item.likes++;
+      document.getElementById(`likes-${index}`).textContent = `${item.likes} Likes`;
+    });
+  });
+}
+
+createPostHTML();

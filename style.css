@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Display', sans-serif;
+    border: 1px solid;
+    
+}
+
+/* layout */
+.content {
+    width: 375px;
+    margin: 0 auto;
+}
+
+/* top */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: solid lightgray 1px;
+    margin: 0;
+}
+
+.logo {
+    width: 127px;
+}
+
+.me {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+/* post */
+.mini,
+.title,
+.nick,
+.point {
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.mini,
+.title,
+.nick,
+.point,
+.likes,
+.subs,
+.username {
+    margin: 0;
+}
+
+.mini,
+.title,
+.nick,
+.point,
+.likes,
+.subs {
+    font-size: 13px;
+}
+
+.title,
+.nick,
+.point,
+.likes,
+.subs,
+.username {
+    font-weight: 400;
+}
+
+.nick,
+.likes,
+.username {
+    font-weight: 700;
+}
+
+.mini {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+}
+
+.title {
+    display: flex;
+    margin: 10px;
+}
+
+.font {
+    margin: 0 10px;
+}
+
+/* img */
+.post {
+    width: 375px;
+    height: 375px;
+    margin: 0;
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    margin: 0;
+}
+
+.icon {
+    height: 22px;
+}
+
+.likes {
+    margin: 0 14px;
+    color: #000;
+    font-weight: 700;
+}
+
+.subs {
+    padding: 10px;
+}
+
+.username {
+    font-weight: 700;
+}

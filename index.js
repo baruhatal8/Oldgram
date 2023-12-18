@@ -64,17 +64,24 @@ const like =  document.querySelector(".like");
   });
   
   container.innerHTML = list; // Добавляем весь HTML в контейнер после формирования списка  
-  addLikeEventListeners();
+  addEventListener();
+}
+//make refactored function
+function addEventListener(){
+  // for each element in arrow i take index
+  posts.forEach((item,index)=>{//index can be named, importantly order (item,index,array)
+    //get like from next new element 
+    let lois = document.getElementById(`like-${index}`)
+    //on click ++ and put result on 
+    lois.addEventListener("click",()=>{
+      item.likes++
+      document.getElementById(`likes-${index}`).textContent=`${item.likes} Likes`
+  })
+  })
+
 }
 
-function addLikeEventListeners() {
-  posts.forEach((item, index) => {
-    let likeIcon = document.getElementById(`like-${index}`);
-    likeIcon.addEventListener("click", () => {
-      item.likes++;
-      document.getElementById(`likes-${index}`).textContent = `${item.likes} Likes`;
-    });
-  });
-}
+
+
 
 createPostHTML();
